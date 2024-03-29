@@ -1,38 +1,469 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+body {
+  padding: 0;
+  margin: 0;
+
+}
+
 .App {
   text-align: center;
+  background-color: #e14700;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.nav-bar {
+  background-color: #ffffff;
+  color: white;
+  width: 100%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  img {
+    padding: 5px;
+    width: 200px;
+    height: 70px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.hero {
+  height: 300px;
+
+}
+
+.hero-img {
+  height: 100%;
+  background-image: url(../src/assets/fried2.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  display: flex; 
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-button {
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* BACKGROUND MOVE */
+.button-background-move {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-background-move:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-background-move:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-background-move {
+    padding: 13px 50px 13px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+.addRestaurant {
+  padding: 20px;
+}
+
+.card-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+}
+
+.rest-card {
+  padding: 7px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width: 270px;
+
+  h1 {
+    font-size: 26px;
+    color: #480000;
   }
+}
+
+.rest-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.241);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+.rest-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.fa-star {
+  color: gold;
+  font-size: 20px;
+  inline-size: 25px;
+}
+
+.rating-row {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+  align-items: center; 
+}
+
+.rate-edit {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #0222f7;
+}
+
+.addRestaurant {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: start;
+  height: 300px;
+  background-color: #853d054a;
+  width: 200px;
+  border-radius: 20px;
+  margin: 20px;
+}
+.add-rating{
+  color: gold;
+  font-size: 20px;
+  display: inline;
+  justify-content: end;
+  padding: 5px;
+}
+
+input {
+  border: 1px solid rgb(252, 0, 0);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+
+
+.add-rest {
+  height: 38px;
+  line-height: 38px;
+  width: 150px;
+  border-radius: 9px;
+  border: none;
+  background-color: #ffe54c;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin: 20px;
+}
+.lable{
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  margin-bottom: 10px;
+  height: 30px;
+  line-height: 40px;
+  text-align: left;
+}
+.inputs-row{
+  display: grid;
+}
+.rest-container{
+  display: grid;
+  justify-items: center;
+  h1{
+    color: #ffffff;
+  }
+}
+.back{
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  margin: 10px;
+  height: 30px;
+  line-height: 40px;
+  text-align: left;
+}
+.details-container{
+  background-color: #e14700;
+  height: 100vh;
+  justify-items: center;
+  color: #ffffff;
+  h1{
+    padding: 10px;
+  }
+
+}
+.footer{
+  background-color: #ffffff;
+  height: 50px;
+  justify-items: center;
+  color: #e14700;
+  h1{
+    padding: 10px;
+    font-size: 20px;
+  }
+}
+.details-img{
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map{
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1000px) {
+  .card-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr;
+    justify-items: center;
+  }
+  .details-container{
+    background-color: #e14700;
+   
+    color: #ffffff;
+    h1{
+      padding: 10px;
+    }
+  
+  }
+  .d1{
+    grid-area: 1 / 1 / 2 / 2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 200px;
+  }
+  .details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    h1{
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+  .details-img{
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe54c;
+  }
+  .map{
+    width: 500px;
+    height: 600px;
+    padding: 10px;
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+@media screen and (min-width: 600px) {
+  .card-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr  ;
+    grid-template-rows: 1fr;
+    justify-items: center;
+  }
+  .addRestaurant {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 300px;
+    background-color: #853d054a;
+    width: 60%;
+    border-radius: 20px;
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .hero {
+    height: 500px;
+  
+  }
+  .card-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    h1{
+      font-size: 26px;
+    }
+    .back{
+      color: rgb(255, 255, 255);
+      font-size: 26px;
+      margin: 10px;
+      height: 30px;
+      line-height: 40px;
+      text-align: left;
+    }
+    .details-container{
+      background-color: #e14700;
+      height: 200vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      color: #ffffff;
+      h1{
+        padding: 10px;
+      }
+    
+    }
+    .d1{
+      grid-area: 1 / 1 / 2 / 2; 
+    }
+    .details{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      h1{
+        padding: 10px;
+        font-size: 20px;
+      }
+    }
+    .details-img{
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffe54c;
+    }
+    .map{
+      width: 300px;
+      height: 200px;
+      padding: 10px;
+      grid-area: 1 / 2 / 2 / 3;
+    }
+  }
+  
+.addRestaurant {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  height: 300px;
+  background-color: #853d054a;
+  width: 60%;
+  border-radius: 20px;
+  margin: 20px;
+
+}
+
+.add-rating{
+  color: gold;
+  font-size: 20px;
+  display: inline;
+  justify-content: center;
+
+}
+.footer{
+  background-color: #ffffff;
+  height: 50px;
+  justify-items: center;
+  color: #e14700;
+  h1{
+    padding: 10px;
+    font-size: 20px;
+  }
+}
+
+input {
+  border: 1px solid rgb(252, 0, 0);
+  border-radius: 4px;
+  height: 30px;
+  line-height: 38px;
+  padding-left: 5px;
+  width: 400px;
+}
+
+
+.add-rest {
+  height: 38px;
+  line-height: 38px;
+  width: 150px;
+  border-radius: 9px;
+  border: none;
+  background-color: #ffe54c;
+  color: black;
+  font-size: 20px;
+  margin: 20px;
+}
+.lable{
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  margin-bottom: 10px;
+  height: 30px;
+  line-height: 40px;
+  text-align: left;
+}
+.inputs-row{
+  display: grid;
+}
+.rest-container{
+  display: grid;
+  justify-items: center;
+}
 }
